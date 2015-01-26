@@ -10,6 +10,6 @@
 
 names = ['Mary', 'Isla', 'Sam']
 
-hashed_names = map(lambda x: hash(x), names)
+hashed_names = map(hash, names)
 
 print hashed_names
