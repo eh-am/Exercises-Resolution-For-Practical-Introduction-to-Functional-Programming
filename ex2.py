@@ -24,10 +24,11 @@ people = [{'name': 'Mary', 'height': 160},
           {'name': 'Isla', 'height': 80},
           {'name': 'Sam'}]
 
-people_with_height = filter(lambda x: 'height' in x, people)
+heights = map(lambda x: x['height'], 
+  filter(lambda x: 'height' in x, people))
 
-heights_sum = reduce(lambda a, x: a + x['height'], people_with_height, 0)
-
-average_height = heights_sum / len(people_with_height)
-
-print average_height
+if (len(heights) > 0):
+  from operator import add
+  heights_sum = reduce(operator.add, heights)
+  average_height = heights_sum / len(heights)
+  print average_height
